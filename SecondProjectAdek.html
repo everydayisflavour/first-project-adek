@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>This is a little gift for you, Adek ❤️</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #bfe9ff, #87ceeb, #5dade2);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: #174a6b;
+    text-align: center;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.55);
+    width: 85%;
+    max-width: 650px;
+    padding: 35px;
+    border-radius: 30px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    animation: fade 1s;
+    z-index: 10;
+}
+
+h1 {
+    color: #1e81b0;
+    margin-bottom: 20px;
+    font-size: 35px;
+}
+
+p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+button {
+    background: #6ec6ff;
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    margin: 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+button:hover {
+    transform: scale(1.1);
+    background: #3fa9f5;
+}
+
+.animal {
+    position: absolute;
+    font-size: 45px;
+    animation: float 5s ease-in-out infinite;
+}
+
+.shark {
+    top: 8%;
+    left: 8%;
+}
+
+.shark2 {
+    bottom: 10%;
+    right: 10%;
+}
+
+.tiger {
+    top: 12%;
+    right: 8%;
+}
+
+.tiger2 {
+    bottom: 12%;
+    left: 10%;
+}
+
+.heart {
+    position: absolute;
+    font-size: 20px;
+    animation: fall 6s linear infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="animal shark">🦈</div>
+<div class="animal shark2">🦈</div>
+
+<div class="animal tiger">🐯</div>
+<div class="animal tiger2">🐯</div>
+
+<div class="container">
+
+<h1 id="title">
+Hey, Adek
+</h1>
+
+<p id="message">
+Today is a very special day, isn't it? <br><br>
+How was your graduation day, sayang?
+</p>
+
+<div id="buttons">
+
+<button onclick="nextPage()">
+It was amazing, Abang! 💗
+</button>
+
+<button onclick="tiredMessage()">
+It was tiring, but I made it 🥹
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+let page = 0;
+
+function tiredMessage() {
+
+    document.getElementById("title").innerHTML =
+    "Oh no, sayang 🥺";
+
+    document.getElementById("message").innerHTML =
+    "Oh noo, sayangku. You must be exhausted.<br><br>" +
+    "I'm really sorry I can't be there with you right now, but please know you're always in my thoughts and prayers.<br><br>" +
+    "I'm rooting for you from afar, and I hope the universe is always kind to you ❤️";
+
+    document.getElementById("buttons").innerHTML =
+    '<button onclick="nextPage()">Thank you, Abang!</button>';
+
+}
+
+const pages = [
+
+{
+title: "HAPPY GRADUATION, ADEK!",
+
+text:
+"I'm so proud of you, sayang.<br><br>" +
+"You did it. You survived all the exams, the stress, the sleepless nights, and every moment when you thought you couldn't continue.<br><br>" +
+"And now look at you ... You made it, sayang ❤️"
+},
+
+{
+title: "A New Chapter",
+
+text:
+"This graduation is not the end of your journey.<br><br>" +
+"It is only the beginning of a beautiful new chapter waiting for you.<br><br>" +
+"Keep dreaming, keep growing, and never doubt how amazing you truly are."
+},
+
+{
+title: "A Little Reminder",
+
+text:
+"There will be days when things feel difficult and uncertain.<br><br>" +
+"But please remember that you are stronger and braver than you think.<br><br>" +
+"I will always believe in you and cheer for every step you take ❤️"
+},
+
+{
+title: "One More Thing ...",
+
+text:
+"Thank you for letting me be a part of your journey and witness this precious moment.<br><br>" +
+"Seeing you graduate is one of the many reasons why I'm so proud of you.<br><br>" +
+"I hope happiness, success, and beautiful things will always find you."
+}
+
+];
+
+function nextPage() {
+
+    if (page < pages.length) {
+
+        document.getElementById("title").innerHTML =
+        pages[page].title;
+
+        document.getElementById("message").innerHTML =
+        pages[page].text;
+
+        document.getElementById("buttons").innerHTML =
+        '<button onclick="nextPage()">Next ❤️</button>';
+
+        page++;
+
+    }
+
+    else {
+
+        document.getElementById("title").innerHTML =
+        "I love you, Adek";
+
+        document.getElementById("message").innerHTML =
+        "Thank you for spending this special day with me, even from afar.<br><br>" +
+        "No matter how far the distance is, I will always be proud of you, support you, and pray for your happiness.<br><br>" +
+        "Congratulations once again, my graduate. I love you endlessly ❤️";
+
+        document.getElementById("buttons").innerHTML =
+        '<button onclick="location.reload()">Read Again 💌</button>';
+
+    }
+
+}
+
+function createHeart() {
+
+    let heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    const icons = ["❤️", "🦈", "🐯", "💙"];
+
+    heart.innerHTML =
+    icons[Math.floor(Math.random() * icons.length)];
+
+    heart.style.left = Math.random() * 100 + "vw";
+
+    heart.style.fontSize =
+    (Math.random() * 20 + 15) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(function() {
+
+        heart.remove();
+
+    }, 6000);
+
+}
+
+setInterval(createHeart, 400);
+
+</script>
+
+</body>
+</html>
